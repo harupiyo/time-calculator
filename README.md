@@ -61,7 +61,7 @@ $ git clone https://github.com/harupiyo/time-calculator ~/common-lisp/time-calcu
 
 # API
 
-利用方法にある例で使われている関数と、利用方法には出ていない関数をまとめて説明します。
+利用方法には出ていない機能も含め、使える機能の全てを説明します。
 
 ## diff-time
 
