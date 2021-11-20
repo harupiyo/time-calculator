@@ -1,0 +1,41 @@
+(in-package :time-calculator)
+
+(defun diff-time (t1-string t2-string)
+  (let ((min1 (time-serialize t1-string))
+        (min2 (time-serialize t2-string)))
+    (values (abs (- min2 min1)) "min")))
+
+(defun time-serialize (time-hhmm-string)
+  (let* ((p (search ":" time-hhmm-string))
+         (h (parse-integer (subseq time-hhmm-string 0 p)))
+         (m (parse-integer (subseq time-hhmm-string (1+ p)))))
+    (+ (* h 60) m)))
+
+(defun min-to-hour (min)
+  (values (/ min 60.0) "hour"))
+
+(defun hour-to-min (hour min)
+  (values (+ min (* hour 60)) "min"))
+
+(defun time-or-num (stream char2 n)
+  (declare (ignorable char2 n))
+  (let ((value nil)
+        (is-time? nil))
+    (labels ((read-at-last ()
+               (let ((c (read-char stream)))
+                 (cond ((digit-char-p c)
+                        (push (string c) value)
+                        (read-at-last))
+                       ((eql #\: c)
+                        (setf is-time? t)
+                        (push (string c) value)
+                        (read-at-last))
+                       (t (unread-char c stream)
+                        (if is-time?
+                            (apply #'concatenate 'string (nreverse value))
+                            (multiple-value-bind (n m)
+                              (parse-integer (apply #'concatenate 'string (nreverse value)))
+                              n)))))))
+      (read-at-last))))
+
+(set-dispatch-macro-character #\# #\t #'time-or-num)
