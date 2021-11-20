@@ -2,7 +2,9 @@
 
 区切られた 開始時間-終了時間 を積算する目的で作った簡易的な時間の計算ライブラリー、及び時給計算の明細を作成するアプリケーションです。
 
-# 利用方法(機能の概要)
+# 利用方法
+
+利用方法及び概要を示します。
 
 ```
 CL-USER> (ql:quickload :time-calculator)
@@ -55,9 +57,11 @@ $ mkdir ~/common-lisp/
 $ git clone https://github.com/harupiyo/time-calculator ~/common-lisp/time-calculator
 ```
 
-あとは冒頭の 利用方法 のように使います。
+あとは [利用方法](#利用方法) のように使います。
 
 # API
+
+利用方法にある例で使われている関数と、利用方法には出ていない関数をまとめて説明します。
 
 ## diff-time
 
