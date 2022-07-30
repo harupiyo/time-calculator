@@ -50,7 +50,7 @@
 (defun calc-time-span-to-min (span)
   "
   Usage:
-  (calc-time-span-to-min 234 => 1234 \"min\"
+  (calc-time-span-to-min 1234 => 1234 \"min\"
   (calc-time-span-to-min \"12:34-22:33\") => 599 \"min\"
   (calc-time-span-to-min \"12:34 22:33\") => 599 \"min\"
   "
