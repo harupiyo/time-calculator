@@ -94,7 +94,7 @@ REPLから time-calculator のAPI が利用可能になりました。
 
 10進数での時間表現から、時間と分を得ます。
 
-````
+```
 (hour-by-decimal->hour-min 1.25) => 1 15 ; 1.25h = 1h + 15min
 ```
 

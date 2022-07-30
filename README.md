@@ -94,7 +94,7 @@ Specify minutes to be converted to hours.
 
 Get hours and minutes from the hour representation in decimal.
 
-````
+```
 (hour-by-decimal->hour-min 1.25) => 1 15 ; 1.25h = 1h + 15min
 ```
 
