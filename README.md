@@ -148,7 +148,7 @@ NIL
 ## calc-time-span-to-min
 
 Calculates minutes from time expressions.
-このユーティリティは、時間計測の時に便利だと思う２通りの表現をサポートします。
+This utility supports two different expressions that we find useful when measuring time.
 
 1. direct representation of minutes
 	```
